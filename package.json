@@ -26,11 +26,11 @@
   },
   "homepage": "https://github.com/p2ppsr/amountinator-react#readme",
   "dependencies": {
+    "@bsv/amountinator": "^2.0.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.6",
-    "amountinator": "^0.2.13",
     "react": "^18.2.0",
     "use-async-effect": "^2.2.7"
   },
