@@ -1,6 +1,6 @@
 {
   "name": "@bsv/amountinator-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Currency amount display components",
   "author": "Peer-to-peer Privacy Systems Research, LLC",
   "license": "Open BSV License",
