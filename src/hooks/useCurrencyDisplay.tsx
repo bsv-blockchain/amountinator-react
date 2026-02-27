@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { CurrencyConverter } from 'amountinator'
+import { CurrencyConverter } from '@bsv/amountinator'
 import useAsyncEffect from 'use-async-effect'
 
 interface FormatOptions {
