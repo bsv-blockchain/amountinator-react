@@ -1,18 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { CurrencyConverter } from '@bsv/amountinator'
 import useAsyncEffect from 'use-async-effect'
-
-interface FormatOptions {
-  decimalPlaces?: number
-  useCommas?: boolean
-  useUnderscores?: boolean
-}
+import { FormatOptions, normalizeDisplayAmount } from '../utils/amountDisplayFormatting'
 
 const useCurrencyDisplay = (amount: string | number, formatOptions?: FormatOptions) => {
   const [displayAmount, setDisplayAmount] = useState<string>('')
   const [isInitialized, setIsInitialized] = useState<boolean>(false)
   const [error, setError] = useState<Error | null>(null)
-  const currencyConverter = new CurrencyConverter()
+  const currencyConverter = useMemo(() => new CurrencyConverter(), [])
 
   useEffect(() => {
 
@@ -28,19 +23,21 @@ const useCurrencyDisplay = (amount: string | number, formatOptions?: FormatOptio
 
     initialize()
 
-    // TODO: Clean up
-  }, [])
+    return () => {
+      currencyConverter.dispose()
+    }
+  }, [currencyConverter])
 
   useAsyncEffect(async () => {
     if (isInitialized) {
       try {
-        const finalAmountToDisplay = await currencyConverter.convertAmount(amount.toString(), formatOptions)
+        const finalAmountToDisplay = await normalizeDisplayAmount(currencyConverter, amount, formatOptions)
         setDisplayAmount(finalAmountToDisplay.formattedAmount)
       } catch (err) {
         setError(err as Error)
       }
     }
-  }, [amount, formatOptions, isInitialized])
+  }, [amount, formatOptions, isInitialized, currencyConverter])
 
   return { displayAmount, error }
 }
