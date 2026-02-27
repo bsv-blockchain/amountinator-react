@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useMemo } from 'react'
 import TextField from '@mui/material/TextField'
 import InputAdornment from '@mui/material/InputAdornment'
-import { CurrencyConverter } from 'amountinator'
+import { CurrencyConverter } from '@bsv/amountinator'
 import useAsyncEffect from 'use-async-effect'
 
 const AmountInputField = ({ onSatoshisChange }) => {

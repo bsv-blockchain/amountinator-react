@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CurrencyConverter } from 'amountinator'
+import { CurrencyConverter } from '@bsv/amountinator'
 import useAsyncEffect from 'use-async-effect'
 import { Tooltip, Typography } from '@mui/material'
 
