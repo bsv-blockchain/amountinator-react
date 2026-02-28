@@ -9,6 +9,9 @@ This package gives you:
 - `AmountInputField` for collecting user input and converting to satoshis
 - `useCurrencyDisplay` for headless/custom UI formatting
 
+All conversions/formatting are based on the user's preferred currency from
+their BRC-100 wallet settings.
+
 ## Installation
 
 ```bash
