@@ -7,6 +7,8 @@
   "main": "./out/src/index.js",
   "types": "./out/src/index.d.ts",
   "files": [
+    "LICENSE",
+    "NOTICE",
     "out"
   ],
   "directories": {
