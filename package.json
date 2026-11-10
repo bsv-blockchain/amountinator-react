@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Currency amount display components",
   "author": "Peer-to-peer Privacy Systems Research, LLC",
-  "license": "Open BSV License",
+  "license": "Apache-2.0",
   "main": "./out/src/index.js",
   "types": "./out/src/index.d.ts",
   "files": [
